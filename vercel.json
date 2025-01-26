@@ -1,0 +1,15 @@
+{
+    "builds": [
+      {
+        "src": "src/App.js",
+        "use": "@vercel/static-build"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/pdf.worker.min.js",
+        "dest": "/public/pdf.worker.min.js"
+      }
+    ]
+  }
+  
