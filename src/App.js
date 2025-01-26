@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import Tesseract from "tesseract.js";
 import { getDocument, GlobalWorkerOptions } from "pdfjs-dist";
-import pdfjsWorker from "pdfjs-dist/legacy/build/pdf.worker.min.js"; // Updated path
 import "./App.css";
 
-// Set up the PDF.js worker globally
-GlobalWorkerOptions.workerSrc = pdfjsWorker;
+// Set up the PDF.js worker globally using a CDN to avoid path issues on Vercel
+GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js";
 
 function App() {
   const [file, setFile] = useState(null);
